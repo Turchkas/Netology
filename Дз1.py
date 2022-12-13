@@ -71,7 +71,7 @@ else:
     print('Несчастливый билет')
 
 #Задание 6
-from numpy import sqrt, pi
+from math import sqrt, pi
 f = int(input('Введи тип фигуры: Круг - 1, Треугольник - 2, Прямоугольник - 3. Ваш выбор = '))
 
 if f == 1:
