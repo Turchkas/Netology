@@ -6,8 +6,7 @@ ids = {'user1': [213, 213, 213, 15, 213],
 collection = set()
 
 for value in ids.values():
-    for v in value:
-        collection.add(v)
+    collection = collection.union(value)
 print(collection)
 
 #Задание 2
@@ -28,12 +27,10 @@ for q in queries:
     list.append(count)
     count = 0
 
-for c in list:
-    if c==2:
-        print('Поисковых запросов, содержащих 2 слов(а):', round(list.count(2)/len(list)*100, 2), '%')
-        break
-    elif c==3:
-        print('Поисковых запросов, содержащих 3 слов(а):', round(list.count(3)/len(list)*100, 2), '%')
+set_list = set(list)
+
+for c in set_list:
+    print('Поисковых запросов, содержащих', c, 'слов(а):', round(list.count(c)/len(list)*100, 2), '%')
 
 #Задание 3
 results = {
