@@ -5,7 +5,6 @@ ratings, movies = pd.read_csv('ratings.csv'), pd.read_csv('movies.csv')
 
 joined = ratings.merge(movies, on = 'movieId', how = 'left')[['title', 'rating']]
 
-
 print(joined[ joined.rating == 5.0 ]['title'].value_counts().head(1))
 
 #Задание №2
