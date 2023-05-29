@@ -29,14 +29,17 @@ geo_data = {
 
 def check_geo(keyword):
     for key, value in geo_data.items():
-        if keyword.lower() in value:
-            return key
-        else: 
-            return 'undefined' 
+        for c in value:
+            if c in keyword.lower():
+                return key
+            else: 
+                return 'undefined' 
 
 keywords = pd.read_csv('keywords.csv')
 
 keywords['region'] = keywords['keyword'].apply(check_geo)
+
+print(keywords.head())
 
 #Задание №3
 import pandas as pd
